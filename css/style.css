@@ -281,6 +281,22 @@ body._lock {
   border-radius: 20px;
 }
 
+@media (hover: hover) {
+  .main-screen__button:hover {
+    color: #F49712;
+    background-color: #797672;
+  }
+}
+
+@media (hover: none) {
+  .main-screen__button:active {
+    color: #F49712;
+    background-color: #797672;
+  }
+}
+
+/* ============= main-screen ============= */
+
 @media (max-width: 768px) {
   .main-screen__title {
     font-weight: 600;
@@ -316,4 +332,43 @@ body._lock {
   max-width: 910px;
   margin: 0 auto;
   line-height: 1.4;
+}
+
+/* ============= galeria ============= */
+
+.galeria {
+  padding: clamp(70px, 5vw, 160px) 0;
+}
+
+.galeria__title {
+  font-size: clamp(40px, 5vw, 64px);
+  margin-bottom: clamp(30px, 5vw, 70px);
+  text-align: center;
+}
+.galeria__inner {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.galeria__item {
+  
+}
+.galeria__img {
+  max-width: 470px;
+  max-height: 470px;
+  margin-bottom: 20px;
+}
+.galeria__images {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+.galeria__text {
+  font-size: clamp(16px, 5vw, 24px);
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
 }
