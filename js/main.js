@@ -44,7 +44,7 @@ if (menuLinks.length > 0) {
 
 // language
 
-// Масив з мовами
+// array lang
 const languages = ['PL', 'UA', 'EN'];
 
 // Обробляємо кліки для відкриття/закриття випадаючого меню
@@ -93,7 +93,7 @@ window.addEventListener('scroll', function() {
 
   parallaxImages.forEach(image => {
     let imageOffsetTop = image.offsetTop;
-    let speed = -0.5; // Це швидкість. Можеш змінювати це значення для різної швидкості
+    let speed = -0.2; // Це швидкість. Можеш змінювати це значення для різної швидкості
 
     // Рухаємо зображення вгору швидше, ніж звичайний скрол
     let translateY = (scrollPosition - imageOffsetTop) * speed;
