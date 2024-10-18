@@ -102,3 +102,37 @@ window.addEventListener('scroll', function() {
     image.style.transform = `translateY(${translateY}px)`;
   });
 });
+
+// slider
+
+new Swiper('.swiper', {
+  slidesPerView: 6,
+  loop: true,
+  loopedSlides: 1,
+  autoplay: {
+    delay: 2000,
+  },
+  speed: 600,
+
+  breakpoints: {
+    320: { // якщо ширина екрану більше 320px
+      slidesPerView: 1.2,
+    },
+    400: { // якщо ширина екрану більше 320px
+      slidesPerView: 1.5,
+    },
+    600: { // якщо ширина екрану більше 600px
+      slidesPerView: 3.5,
+    },
+    900: { // якщо ширина екрану більше 900px
+      slidesPerView: 4.5,
+    },
+    1200: { // якщо ширина екрану більше 1200px
+      slidesPerView: 6.4,
+    },
+    1500: { // якщо ширина екрану більше 1200px
+      slidesPerView: 8,
+    },
+  }
+  
+});
