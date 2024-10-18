@@ -372,3 +372,22 @@ body._lock {
   text-align: center;
   margin: 0 auto;
 }
+
+/* ============= slider ============= */
+
+.slider {
+  background-color: #2B2A29;
+  padding: clamp(100px, 5vw, 200px) 0;
+}
+
+.slide__slider-img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.slider__slid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
