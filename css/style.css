@@ -413,6 +413,7 @@ body._lock {
   justify-content: space-evenly;
   font-size: clamp(14px, 5vw, 32px);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .products__item:hover {
