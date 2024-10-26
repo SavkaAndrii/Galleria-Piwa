@@ -136,3 +136,20 @@ new Swiper('.swiper', {
   }
   
 });
+
+// products
+
+const productsItem = document.querySelectorAll('.products__item');
+const tabContentItem = document.querySelectorAll('.tab__content-item');
+
+for (let item of productsItem) {
+  item.addEventListener('click', function() {
+    
+    for (let element of tabContentItem) {
+      element.classList.add('hidden');
+    }
+    
+    const content = document.querySelector('#' + item.dataset.tab);
+    content.classList.remove('hidden')
+  })
+}
