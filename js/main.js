@@ -42,47 +42,65 @@ if (menuLinks.length > 0) {
   }
 }
 
-// language
-
-// array lang
+// Масив з мовами
 const languages = ['PL', 'UA', 'EN'];
 
-// Обробляємо кліки для відкриття/закриття випадаючого меню
-document.querySelector('.selected-lang').addEventListener('click', function() {
-    const currentLang = document.getElementById('selected-lang').textContent;
-    
-    // Фільтруємо інші мови, щоб показати тільки ті, що не вибрані
-    const dropdown = document.getElementById('lang-dropdown');
-    dropdown.innerHTML = '';
-    
-    languages.forEach(function(lang) {
-        if (lang !== currentLang) {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = '#';
-            a.setAttribute('data-lang', lang);
-            a.textContent = lang;
-            li.appendChild(a);
-            dropdown.appendChild(li);
-        }
-    });
+// Функція для зміни тексту на сторінці відповідно до вибраної мови
+function changeLanguage(lang) {
+  const elements = document.querySelectorAll('[data-lang-' + lang.toLowerCase() + ']');
 
-    document.querySelector('.lang-menu').classList.toggle('open');
+  elements.forEach(function (element) {
+    const text = element.getAttribute('data-lang-' + lang.toLowerCase());
+    if (text) {
+      element.textContent = text;
+    }
+  });
+}
+
+// Обробляємо кліки для відкриття/закриття випадаючого меню
+document.querySelector('.selected-lang').addEventListener('click', function () {
+  const currentLang = document.getElementById('selected-lang').textContent;
+
+  // Фільтруємо інші мови, щоб показати тільки ті, що не вибрані
+  const dropdown = document.getElementById('lang-dropdown');
+  dropdown.innerHTML = '';
+
+  languages.forEach(function (lang) {
+    if (lang !== currentLang) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#';
+      a.setAttribute('data-lang', lang);
+      a.textContent = lang;
+      li.appendChild(a);
+      dropdown.appendChild(li);
+    }
+  });
+
+  document.querySelector('.lang-menu').classList.toggle('open');
 });
 
 // Обробляємо вибір мови і змінюємо відображувану мову
-document.querySelector('#lang-dropdown').addEventListener('click', function(e) {
-    if (e.target.tagName === 'A') {
-        e.preventDefault();
-        const selectedLang = e.target.getAttribute('data-lang');
-        
-        // Змінюємо текст на панелі з вибраною мовою
-        document.getElementById('selected-lang').textContent = selectedLang;
+document.querySelector('#lang-dropdown').addEventListener('click', function (e) {
+  if (e.target.tagName === 'A') {
+    e.preventDefault();
+    const selectedLang = e.target.getAttribute('data-lang');
 
-        // Закриваємо випадаюче меню після вибору
-        document.querySelector('.lang-menu').classList.remove('open');
-    }
+    // Змінюємо текст на панелі з вибраною мовою
+    document.getElementById('selected-lang').textContent = selectedLang;
+
+    // Змінюємо текст на всіх елементах відповідно до вибраної мови
+    changeLanguage(selectedLang);
+
+    // Закриваємо випадаюче меню після вибору
+    document.querySelector('.lang-menu').classList.remove('open');
+  }
 });
+
+// Виклик функції для зміни мови при завантаженні сторінки
+const initialLang = document.getElementById('selected-lang').textContent;
+changeLanguage(initialLang);
+
 
 
 // Паралакс для зображень
