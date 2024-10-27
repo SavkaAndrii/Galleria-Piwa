@@ -279,6 +279,7 @@ body._lock {
   color: #fff;
   border: none;
   border-radius: 20px;
+  transition: all 0.3s ease 0s;
 }
 
 @media (hover: hover) {
@@ -513,5 +514,37 @@ body._lock {
 @media (max-width: 500px) {
   .products__list {
     font-weight: 400;
+  }
+}
+
+/* ============= glovo ============= */
+
+.glovo {
+  padding: clamp(150px, 5vw, 300px) 0;
+  text-align: center;
+}
+
+.button__glovo {
+  padding: clamp(15px, 3vw, 35px);
+  background-color: #2B2A29;
+  color: #fff;
+  font-size: clamp(18px, 5vw, 36px);
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.3s ease 0s;
+}
+
+@media (hover: hover) {
+  .button__glovo:hover {
+    color: #F49712;
+    background-color: #797672;
+  }
+}
+
+@media (hover: none) {
+  .button__glovo:active {
+    color: #F49712;
+    background-color: #797672;
   }
 }
