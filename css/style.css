@@ -585,7 +585,7 @@ body._lock {
 .footer__social-inner {
   display: flex;
   gap: 30px;
-  margin-bottom: 70px;
+  margin-bottom: clamp(30px, 5vw, 70px);
 }
 
 .footer__instagram {
