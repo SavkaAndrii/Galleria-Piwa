@@ -409,6 +409,7 @@ body._lock {
   display: flex;
   gap: 30px;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .promo__item {
