@@ -260,7 +260,7 @@ body._lock {
 .main-screen__title {
   font-size: clamp(20px, 5vw, 64px);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   letter-spacing: 0.32px;
   margin-bottom: clamp(10px, 5vw, 60px);
   
@@ -268,7 +268,7 @@ body._lock {
 .main-screen__text {
   font-size: clamp(16px, 2vw, 24px);
   font-weight: 400;
-  max-width: 420px;
+  max-width: 430px;
   margin: 0 auto clamp(10px, 5vw, 60px);
 }
 .main-screen__button {
